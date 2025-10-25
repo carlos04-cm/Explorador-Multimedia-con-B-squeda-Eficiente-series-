@@ -1,66 +1,78 @@
-📹 Vídeo demostrativo :Explorador de Series de Carlos
+# 🎬 Explorador de Series con Búsqueda Eficiente (Hashing)
 
-Este proyecto en **Java** implementa un sistema de gestión de series utilizando una estructura de datos basada en **Hashing** mediante la clase **`HashMap`**.  
-Permite registrar, buscar, listar y eliminar series, mostrando además la estructura interna del mapa hash.
+## 📌 Descripción General
 
----
-
-## 🚀 Descripción del Proyecto
-
-El programa permite al usuario interactuar mediante un **menú en consola** para realizar las siguientes acciones:
-
-- 📥 **Registrar** una nueva serie con sus datos (nombre, género, plataforma, región).  
-- 🔍 **Buscar** una serie por su nombre.  
-- 📋 **Listar** todas las series registradas.  
-- ❌ **Eliminar** una serie.  
-- 🧩 **Visualizar** la estructura interna del HashMap (clave → valor).
+Este proyecto implementa un **Explorador de Series** desarrollado en **Java**, que permite registrar, buscar, listar y eliminar series utilizando una **estructura de datos Hashing** (`HashMap`).  
+El propósito es aplicar estructuras de datos avanzadas para lograr **búsquedas rápidas y eficientes**, demostrando el funcionamiento práctico de la **dispersión (hashing)**.
 
 ---
 
-## 🧠 Estructura del Proyecto
+## 🎥 Video Demostrativo
+
+🔗 **Ver demostración del proyecto en YouTube:**  
+[https://youtu.be/Vx3koofCI7Q?si=ANIR6vnjSG6z8U07](https://youtu.be/Vx3koofCI7Q?si=ANIR6vnjSG6z8U07)
+
+---
+
+## 🎯 Objetivo del Proyecto
+
+Aplicar los conceptos de **tablas hash (Hashing)** para organizar y acceder a datos multimedia (en este caso, series) de forma eficiente.  
+El programa permite al usuario gestionar una colección de series desde un menú interactivo.
+
+---
+
+## 🧱 Estructura del Proyecto
 
 El proyecto está compuesto por tres clases principales dentro del paquete `com.carlos`:
 
 ### 1. `Serie.java`
-Representa una serie con sus atributos básicos:
-- `nombre`
-- `genero`
-- `plataforma`
-- `region`
+Define la estructura de un objeto **Serie**, con los siguientes atributos:
+- `nombre` → Título de la serie.  
+- `genero` → Género de la serie.  
+- `plataforma` → Plataforma donde se transmite (Netflix, HBO, etc.).  
+- `region` → Región o país de origen.
 
-Incluye métodos *getter* y una sobrescritura del método `toString()` para mostrar la información de forma legible.
+Incluye métodos *getter* y el método `toString()` para mostrar la información formateada.
 
 ---
 
 ### 2. `HashSeries.java`
-Gestiona las series usando un **HashMap<String, Serie>**, donde la clave es el nombre de la serie en minúsculas.  
-Proporciona los siguientes métodos:
+Implementa la **tabla hash** utilizando un `HashMap<String, Serie>` donde la **clave** es el nombre de la serie en minúsculas.
 
-- `insertar(Serie serie)` → Registra una nueva serie.  
-- `buscar(String nombre)` → Devuelve la serie si existe.  
-- `eliminar(String nombre)` → Borra una serie por su nombre.  
+**Funciones principales:**
+- `insertar(Serie serie)` → Agrega una nueva serie.  
+- `buscar(String nombre)` → Busca una serie por su nombre.  
+- `eliminar(String nombre)` → Elimina una serie registrada.  
 - `listarSeries()` → Muestra todas las series almacenadas.  
-- `mostrarEstructura()` → Imprime la estructura interna del HashMap.
+- `mostrarEstructura()` → Imprime la estructura interna del `HashMap`.
+
+Esta clase representa la **gestión de datos** con hashing, logrando búsquedas y operaciones en tiempo promedio **O(1)**.
 
 ---
 
 ### 3. `ExploradorSeries.java`
-Contiene el **método `main`** y el **menú interactivo por consola**.  
-El usuario puede ingresar opciones numéricas para ejecutar las diferentes operaciones sobre las series.
+Clase principal con el método `main()`.  
+Contiene el **menú interactivo** que permite al usuario realizar las siguientes acciones:
+
+| Opción | Acción |
+|--------|--------|
+| 1 | Registrar nueva serie |
+| 2 | Buscar serie por nombre |
+| 3 | Listar todas las series |
+| 4 | Eliminar una serie |
+| 5 | Mostrar estructura interna del hash |
+| 0 | Salir del programa |
 
 ---
 
-## 🧩 Hashing en el Proyecto
+## ⚙️ Ejecución
 
-Este programa aplica el concepto de **Hashing**, una técnica usada para **almacenar y acceder a datos rápidamente** mediante una **función hash**.
+### 🪄 Requisitos
+- **Java JDK 8 o superior**
+- Consola o IDE (Eclipse, IntelliJ, NetBeans o VS Code con extensión Java)
 
-En este caso, el **HashMap** se encarga internamente de:
-
-1. Tomar la **clave** (el nombre de la serie).  
-2. Calcular su **hash** (un número entero único basado en la clave).  
-3. Determinar en qué posición de la tabla hash se guardará el objeto `Serie`.
-
-Por ejemplo:
-
-```java
-tabla.put("breaking bad", new Serie("Breaking Bad", "Drama", "Netflix", "USA"));
+### ▶️ Pasos para ejecutar
+1. Clonar o descargar el proyecto.
+2. Compilar las clases:
+   ```bash
+   javac com/carlos/*.java
